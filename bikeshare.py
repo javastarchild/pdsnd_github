@@ -191,7 +191,12 @@ def user_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
-
+def keepon():
+    keepon = input('\nWould you like to see more data? Enter yes or no.\n')
+    if keepon.lower() == 'yes':
+        cls()
+    else:
+        break
 def main():
     while True:
         city, month, day = get_filters()
