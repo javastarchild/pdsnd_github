@@ -192,6 +192,13 @@ def user_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
+def keepon():
+    keepon = input('\nWould you like to see more data? Enter yes or no.\n')
+    if keepon.lower() == 'yes':
+        cls()
+        return True
+    else:
+        return False
 
 def main():
     while True:
@@ -200,26 +207,17 @@ def main():
 
         time_stats(df)
         
-        keepon = input('\nWould you like to see more data? Enter yes or no.\n')
-        if keepon.lower() == 'yes':
-            cls()
-        else:
+        if keepon() != True:
             break
         
         station_stats(df)
         
-        keepon = input('\nWould you like to see more data? Enter yes or no.\n')
-        if keepon.lower() == 'yes':
-            cls()
-        else:
+        if keepon() != True:
             break
             
         trip_duration_stats(df)
         
-        keepon = input('\nWould you like to see more data? Enter yes or no.\n')
-        if keepon.lower() == 'yes':
-            cls()
-        else:
+        if keepon() != True:
             break
             
         user_stats(df)
